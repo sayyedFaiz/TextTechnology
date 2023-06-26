@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stock Details</title>
+  </head>
+  <body>
+    <a href="/search">Go back to search</a>
+    <a href="/">Go to stock live stock price</a>
+    <table>
+      <tr>
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Country</th>
+        <th>Description</th>
+      </tr>
+    <% for(let stock of stocks) { %>
+      <tr>
+        <td><%= stock.symbol %></td>
+        <td><%= stock.name %></td>
+        <td><%= stock.country %></td>
+        <td><%= stock.description %></td>
+      </tr>
+    <% } %>
+    </table>
+
+  </body>
+</html

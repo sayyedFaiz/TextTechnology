@@ -1,14 +1,63 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <div id="xmlContainer" style="display: none;">
+      <%= stockXMLDoc %>
+    </div>
+    <script type="text/javascript">
+      function download(filename) {
+        var element = document.createElement('a');
+        var text = document.getElementById("xmlContainer").textContent;
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+        element.setAttribute('download', filename);
+
+        element.style.display = 'none';
+        document.body.appendChild(element);
+
+        element.click();
+
+        document.body.removeChild(element);
+      }
+    </script>
     <title>Stock Details</title>
   </head>
   <body>
+    <a href="/">Go back</a>
+    <button type="button" onClick="download('<%=stock.symbol%>.xml')">Download as XML</button>
     <h1>Stock Details</h1>
     <p>Symbol: <%= stock.symbol %></p>
-    <p>Price: <%= stock.price %> <%= stock.currency %></p>
-    <p>Day High: <%= stock.dayHigh %> <%= stock.currency %></p>
-    <p>Day Low: <%= stock.dayLow %> <%= stock.currency %></p>
-    <a href="/">Go back</a>
+    <p>Name: <%= stock.name %></p>
+    <h1>Prices</h1>
+    <table>
+      <tr>
+        <th>Date of Information</th>
+        <th>Price (<%= stock.currency %>)</th>
+        <th>Day High (<%= stock.currency %>)</th>
+        <th>Day Low (<%= stock.currency %>)</th>
+      </tr>
+      <% for(let price of stock.prices) { %>
+        <tr>
+          <td><%= price.dateOfPrice_UTC %> </td>
+          <td><%= price.price %> </td>
+          <td><%= price.dayHigh %></td>
+          <td><%= price.dayLow %></td>
+        </tr>
+      <% }%>
+      </table>
+      <% if(stock.officers!=="--Unkown--") {%>
+        <h1>Officers</h1>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Role/Title</th>
+          </tr>
+          <% for(let officer of stock.officers) { %>
+          <tr>
+            <td><%= officer.name %> </td>
+            <td><%= officer.title %> </td>
+          </tr>
+          <% }%>
+          </table>
+      <% } %>
   </body>
 </html>

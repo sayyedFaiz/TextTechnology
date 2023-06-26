@@ -11,6 +11,6 @@ const stockSchema = new mongoose.Schema({
   dayLow: Number,
 });
 
-const Stock = mongoose.model("Stock", stockSchema);
+//const Stock = mongoose.model("Stock", stockSchema);
 
-module.exports = Stock;
+//module.exports = Stock;

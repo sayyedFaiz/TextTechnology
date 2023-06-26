@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stock Search</title>
+  </head>
+  <body>
+    <h1>Find available Stocks</h1>
+    <form action="/results" method="GET">
+      <input type="text" name="query" placeholder="Enter some query words" />
+      <div>
+        <div><input type="radio" name="searchType" value="exact"/>Seach for exact phrase</div>
+        <div><input type="radio" name="searchType" value="keywords" checked/>Seach for keywords</div>
+      </div>
+      <br>
+      Search in fields...
+      <div><input type="checkbox" name="bySymbol" />Symbol/Ticker</div>
+      <div><input type="checkbox" name="byName" />Name</div>
+      <div><input type="checkbox" name="byCountry" />Country</div>
+      <div><input type="checkbox" name="byDescription" />Description</div>
+      <button type="submit">Search</button>
+    </form>
+  </body>
+</html>
+

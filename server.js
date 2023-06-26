@@ -2,10 +2,16 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const StockController = require("./Controllers/stockController");
+const StockControllerExt = require("./Controllers/stockController_ext");
 const app = express();
 const PORT = process.env.PORT;
 app.use(express.static("public"));
 app.set("view engine", "ejs");
+
+app.get("/search", (req, res) => {
+  res.render("index_search");
+});
+app.get('/results', StockControllerExt.fetchResults);
 
 app.get("/", (req, res) => {
   res.render("index");

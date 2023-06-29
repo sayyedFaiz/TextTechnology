@@ -48,7 +48,8 @@ function stock2xml(stock) {
   out += "\t<sector>"+escapeXml(stock.sector)+"</sector>\n";
   out += "\t<industry>"+escapeXml(stock.industry)+"</industry>\n";
   out += "\t<officers>\n"
-  if(stock.officers!=="--Unknown--") {
+  if(stock.officers[0]!=="--Unkown--") {  // in database its not an array if its "--Unknown--" but due to mongoos schema its gets wrapped into an array
+    // additionally I had a type in the collect.py so its "Unkown" instead of "Unknown"
     for(let o of stock.officers) {
       out += "\t\t<officer\n>"
       out += "\t\t\t<name>"+escapeXml(o.name)+"</name>\n";
@@ -56,8 +57,9 @@ function stock2xml(stock) {
       out += "\t\t</officer\n>"
     }
   } else {
-    out += "--Unkown--"
+    out += "--Unknown--"
   }
+  console.log("DEBUG-B");
   out += "\t</officers>\n";
   out += "\t<currency>"+escapeXml(stock.currency)+"</currency>\n";
   out += "\t<prices>\n"
@@ -104,7 +106,8 @@ const stockController = {
           await Stock.findOneAndUpdate({symbol:stock.symbol}, {$push: {prices: newPrice}});
           // Re-query the update stock from database (this is one redundant query, maybe find better way for dooing this)
           stock = await Stock.findOne({ symbol:stock.symbol });
-          console.log(stock);
+          //console.log(stock);
+          console.log("DEBUG1");
           // Prepare data as XML 
           let stockXMLDoc = stock2xml(stock);
           // Render stock details as html

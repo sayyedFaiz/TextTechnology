@@ -27,6 +27,7 @@ function localTime2UTC(now) {
 }
 
 function escapeXml(unsafe) {
+  //// Convert special chars that are used by XML to HTML escaped versions
   return unsafe.replace(/[<>&'"]/g, function (c) {
       switch (c) {
           case '<': return '&lt;';
@@ -39,6 +40,8 @@ function escapeXml(unsafe) {
 }
 
 function stock2xml(stock) {
+  /// Input: a mongoos stock object
+  /// Output: a string, containing XML
   let out = "";
   out += "<stock>\n";
   out += "\t<name>"+escapeXml(stock.name)+"</name>\n";
@@ -104,10 +107,8 @@ const stockController = {
           }
           // Update price information in database
           await Stock.findOneAndUpdate({symbol:stock.symbol}, {$push: {prices: newPrice}});
-          // Re-query the update stock from database (this is one redundant query, maybe find better way for dooing this)
+          // Re-query the updated stock from database (this is one redundant query, maybe find better way for dooing this)
           stock = await Stock.findOne({ symbol:stock.symbol });
-          //console.log(stock);
-          console.log("DEBUG1");
           // Prepare data as XML 
           let stockXMLDoc = stock2xml(stock);
           // Render stock details as html

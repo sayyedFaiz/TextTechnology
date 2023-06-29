@@ -4,7 +4,7 @@ const StockExt = require("../models/stock_ext");
 
 
 function buildQuery(queryText, searchType) {
-  // Build a query from a peach of text
+  // Build a query from a pice of text
   let queryRegEx = queryText;
   console.log(searchType);
   if(searchType==="keywords") {

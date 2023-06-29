@@ -117,7 +117,7 @@ Exact Search:
 
 Keyword Sarch:
 ![query for two words](./readme/query-keywords.png)
-![reslt table](./readme/result-keywords.png)
+![reslt table](./readme/results-keywords.png)
 
 ### Details (Apple)
 ![query for AAPL](./readme/details-query.png)

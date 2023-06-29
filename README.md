@@ -105,7 +105,22 @@ Currently our MongoDB contains entires for TBD stocks.
 | Prices      | s | s |
 
 ## Examples
-### Search-1
-### Search-2
-### Details-1
+Find pcitures and example XMLs in the `./readme/` folder.
+### Search-1 (Unkown attributes)
+![query for two words](./readme/query-1.png)
+![reslt table](./readme/result-1.png)
+
+### Search-2 (exact vs keyword)
+Exact Search:
+![query for two words](./readme/query-exact.png)
+![reslt table](./readme/result-exact.png)
+
+Keyword Sarch:
+![query for two words](./readme/query-keyword.png)
+![reslt table](./readme/result-keyword.png)
+
+### Details (Apple)
+![query for AAPL](./readme/details-index.png)
+![result](./readme/details-results.png)
+![downloadable xml](./readme/details-xml.png)
 

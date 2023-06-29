@@ -108,7 +108,7 @@ Currently our MongoDB contains entires for TBD stocks.
 Find pcitures and example XMLs in the `./readme/` folder.
 ### Search-1 (Unkown attributes)
 ![query for two words](./readme/query-1.png)
-![reslt table](./readme/result-1.png)
+![reslt table](./readme/results-1.png)
 
 ### Search-2 (exact vs keyword)
 Exact Search:
@@ -116,11 +116,11 @@ Exact Search:
 ![reslt table](./readme/result-exact.png)
 
 Keyword Sarch:
-![query for two words](./readme/query-keyword.png)
-![reslt table](./readme/result-keyword.png)
+![query for two words](./readme/query-keywords.png)
+![reslt table](./readme/result-keywords.png)
 
 ### Details (Apple)
-![query for AAPL](./readme/details-index.png)
-![result](./readme/details-results.png)
+![query for AAPL](./readme/details-query.png)
+![result](./readme/details-result.png)
 ![downloadable xml](./readme/details-xml.png)
 

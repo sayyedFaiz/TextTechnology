@@ -93,16 +93,17 @@ Note that if a piece of information is not available a "--Unkown--" text is show
 	
 # Examples and Statistics
 ## Statistics 
-Currently our MongoDB contains entires for TBD stocks.
+Currently our MongoDB contains entries for 3617 stocks.
 |Field | % of examples where info is available | Average-Length |
 |--|--|--|
 | Symbol      | 100 | - |
 | Name        | 100 | - |
-| Sector      | s | - |
-| Industry    | s | - |
-| Description | s | - |
-| Officers    | s | s |
-| Prices      | s | s |
+| Country     |  69 | - |
+| Sector      |  69 | - |
+| Industry    |  69 | - |
+| Description |  99 | - |
+| Officers    |  67 | 7.2 |
+| Prices      | 100 | 1.02 |
 
 ## Examples
 Find pcitures and example XMLs in the `./readme/` folder.

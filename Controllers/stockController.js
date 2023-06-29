@@ -1,6 +1,9 @@
 const axios = require("axios");
+const fs = require("fs");
+const convertJsonToXml = require("./jsonToXmlConverter");
+
 const Stock = require("../models/stock");
-const convert = require("xml-js");
+
 const stockController = {
   async fetchStock(req, res) {
     const stockName = req.query.name;
@@ -17,7 +20,6 @@ const stockController = {
         );
 
         const quoteData = quoteResponse.data.quoteSummary.result[0].price;
-        // Save the stock details to the database if it doesn't already exist
         let stock = await Stock.findOne({ symbol });
         if (stock != null) {
           stock.symbol = quoteData.symbol;
@@ -35,21 +37,26 @@ const stockController = {
           });
         }
         await stock.save();
-        // console.log(stock);
-        //Convert the response to JSON string and then to XML
-        var options = { compact: true, ignoreComment: true, spaces: 4 };
-        const xml = convert.json2xml(
-          JSON.parse(JSON.stringify(stock)),
-          options
-        );
+
+        // Convert the stock object to JSON
+        const stockJSON = JSON.parse(JSON.stringify(stock));
+
+        // Convert JSON to XML
+        const xmlData = convertJsonToXml(stockJSON);
+
+        // Save XML to a file
+        const xmlFilePath = "output.xml";
+        fs.writeFileSync(xmlFilePath, xmlData);
+        console.log(`XML file saved at: ${xmlFilePath}`);
+
         res.render("stock", { stock });
       } else {
         res.render("error");
       }
     } catch (error) {
-      // res.render("error");
       res.send("not found");
     }
   },
 };
+
 module.exports = stockController;

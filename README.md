@@ -32,7 +32,9 @@ In this example the MongoDB is a local database instance.
 ## Search page
 If the server runs, open the webpage `http://localhost:4200/search`.
 Then you will see the following page:
+
 ![search page](./readme/search_index.png)
+
 In the textfield you can enter query words (the search is NOT case-sensitive).
 You can also specifiy if you want to perform an exact-phrase or a keyword search.
 The keyword search connects each word (seperated by whitespace) with a logical OR,
@@ -46,21 +48,27 @@ Press 'search' to see the matching database entries.
 If the server runs, open the webpage `http://localhost:4200/results?query=<your-query>&<fields-to-be-searched>`
 Eg. for searching "Medical Technology" in the Description field visit: `http://localhost:4200/results?query=Medical+Technology&byDescription=on`
 You will see a page like this:
+
 ![search page](./readme/search_results.png)
+
 Here all results matching your query are shown in a HTML table.
 Please note: Sofar there is a bug, same items can appear multiple times. TBD: Fix.
 
 ## Stock Details search page
 If the server runs, open the webpage `http://localhost:4200/`
 Then you will see the following page:
+
 ![search page](./readme/details_index.png)
+
 The the textfield you can specify the Symbol/Ticker or Name of a company.
 Press 'search' to see the database entry and up-to-date price.
 
 ## Stock Details result page
 If the server runs, open the webpage `http://http://localhost:4200/stock?name=<SYMBOL-or-NAME>`
 You will be presented with a page like this:
+
 ![search page](./readme/details_results.png)
+
 The price list will contain all prices queried so far. Each time this page is loaded, the underling javascript queries an up-to-date price from the yahoo-API and appends it to this list, so the list will grow each time the page is reloded.
 If you want to quickly store the stock information, press the 'Download as XML' button. An autmatic download will start, providing you with an XML file containing all displaied and extra informations.
 (TBD: Maybe offer a schema to validate downloaded files??)

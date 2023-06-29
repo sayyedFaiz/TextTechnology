@@ -1,0 +1,74 @@
+
+      <stock>
+	<name>Apple Inc.</name>
+	<symbol>AAPL</symbol>
+	<country>United States</country>
+	<description>Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide. The company offers iPhone, a line of smartphones; Mac, a line of personal computers; iPad, a line of multi-purpose tablets; and wearables, home, and accessories comprising AirPods, Apple TV, Apple Watch, Beats products, and HomePod. It also provides AppleCare support and cloud services; and operates various platforms, including the App Store that allow customers to discover and download applications and digital content, such as books, music, video, games, and podcasts. In addition, the company offers various services, such as Apple Arcade, a game subscription service; Apple Fitness+, a personalized fitness service; Apple Music, which offers users a curated listening experience with on-demand radio stations; Apple News+, a subscription news and magazine service; Apple TV+, which offers exclusive original content; Apple Card, a co-branded credit card; and Apple Pay, a cashless payment service, as well as licenses its intellectual property. The company serves consumers, and small and mid-sized businesses; and the education, enterprise, and government markets. It distributes third-party applications for its products through the App Store. The company also sells its products through its retail and online stores, and direct sales force; and third-party cellular network carriers, wholesalers, retailers, and resellers. Apple Inc. was incorporated in 1977 and is headquartered in Cupertino, California.</description>
+	<sector>Technology</sector>
+	<industry>Consumer Electronics</industry>
+	<officers>
+		<officer
+>			<name>Mr. Timothy D. Cook</name>
+			<title>CEO &amp; Director</title>
+		</officer
+>		<officer
+>			<name>Mr. Luca Maestri</name>
+			<title>CFO &amp; Sr. VP</title>
+		</officer
+>		<officer
+>			<name>Mr. Jeffrey E. Williams</name>
+			<title>Chief Operating Officer</title>
+		</officer
+>		<officer
+>			<name>Ms. Katherine L. Adams</name>
+			<title>Sr. VP, Gen. Counsel &amp; Sec.</title>
+		</officer
+>		<officer
+>			<name>Ms. Deirdre O&apos;Brien</name>
+			<title>Sr. VP of Retail</title>
+		</officer
+>		<officer
+>			<name>Mr. Chris Kondo</name>
+			<title>Sr. Director of Corp. Accounting</title>
+		</officer
+>		<officer
+>			<name>Mr. James Wilson</name>
+			<title>Chief Technology Officer</title>
+		</officer
+>		<officer
+>			<name>Ms. Mary Demby</name>
+			<title>Chief Information Officer</title>
+		</officer
+>		<officer
+>			<name>Ms. Nancy Paxton</name>
+			<title>Sr. Director of Investor Relations &amp; Treasury</title>
+		</officer
+>		<officer
+>			<name>Mr. Greg Joswiak</name>
+			<title>Sr. VP of Worldwide Marketing</title>
+		</officer
+>	</officers>
+	<currency>USD</currency>
+	<prices>
+		<price>
+			<date>2023-06-26 15:59:59</date>
+			<price>186.9132</price>
+			<dayHigh>188.05</dayHigh>
+			<dayLow>186.34</dayLow>
+		</price>
+		<price>
+			<date>2023-06-26 16:03:24</date>
+			<price>186.7706</price>
+			<dayHigh>188.05</dayHigh>
+			<dayLow>186.34</dayLow>
+		</price>
+		<price>
+			<date>2023-06-29 12:23:15</date>
+			<price>189.25</price>
+			<dayHigh>189.9</dayHigh>
+			<dayLow>187.6</dayLow>
+		</price>
+	</prices>
+</stock>
+
+    

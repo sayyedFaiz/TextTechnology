@@ -1,5 +1,4 @@
 const axios = require("axios");
-const fs = require("fs");
 const Stock = require("../models/stock");
 const convert = require("xml-js");
 const stockController = {
@@ -36,19 +35,19 @@ const stockController = {
           });
         }
         await stock.save();
+        // console.log(stock);
+        //Convert the response to JSON string and then to XML
+        var options = { compact: true, ignoreComment: true, spaces: 4 };
+        const xml = convert.json2xml(
+          JSON.parse(JSON.stringify(stock)),
+          options
+        );
         res.render("stock", { stock });
-        const jsonString = JSON.stringify(stock, null, 2);
-        fs.writeFile("output.json", jsonString, "utf8", (err) => {
-          if (err) {
-            console.error("Error writing JSON file:", err);
-            return;
-          }
-          console.log("JSON file saved");
-        });
       } else {
         res.render("error");
       }
     } catch (error) {
+      // res.render("error");
       res.send("not found");
     }
   },

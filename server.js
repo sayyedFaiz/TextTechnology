@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const StockController = require("./Controllers/stockController");
 const app = express();
 const PORT = process.env.PORT;
+
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 

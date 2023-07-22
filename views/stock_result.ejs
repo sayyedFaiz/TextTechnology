@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Company Details</title>
+  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+
+<body>
+  <div class="container d-flex justify-content-center align-items-center mt-5 flex-column">
+    <h1 class="fs-1 fw-bold">Stock Details</h1>
+    <div class="cards-container d-flex flex-wrap justify-content-center flex-column mt-5">
+      <div class="card">
+        <div class="card-body">
+          <% if (stock) { %>
+            <p><strong>Symbol:</strong> <%= stock.symbol %></p>
+            <p><strong>Price:</strong> <%= stock.price %></p>
+            <p><strong>Day High:</strong> <%= stock.dayHigh %></p>
+            <p><strong>Day Low:</strong> <%= stock.dayLow %></p>
+          <% } else { %>
+            <p>Stock details not found.</p>
+          <% } %>
+        </div>
+      </div>
+    </div>
+    <a href="/" class="btn btn-primary mt-5">Go back</a>
+  </div>
+  <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

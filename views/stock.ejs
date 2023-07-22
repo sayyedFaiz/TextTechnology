@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Stock Details</title>
+    <title>Company Details</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
   </head>
   <body>
-    <h1>Stock Details</h1>
-    <p>Symbol: <%= stock.symbol %></p>
-    <p>Price: <%= stock.price %> <%= stock.currency %></p>
-    <p>Day High: <%= stock.dayHigh %> <%= stock.currency %></p>
-    <p>Day Low: <%= stock.dayLow %> <%= stock.currency %></p>
-    <a href="/">Go back</a>
+    <div class="container  d-flex justify-content-center align-items-center my-5 flex-column">
+      <div class="cards-container d-flex flex-wrap justify-content-center">
+        <% Companies.forEach((company)=>{ %>
+          <div class="card m-2"  style="width: 20rem;">
+            <div class="card-body">
+              <h5 class="card-title">Name: <%= company['2. name'] %></h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Symbol: <%= company['1. symbol'] %></li>
+                <li class="list-group-item">Region: <%= company['4. region'] %></li>
+                <li class="list-group-item">Currency:<%= company['8. currency'] %></li>
+                <li class="list-group-item">
+                  <form action="/stock_result/<%= company['1. symbol'] %>/save" method="post">
+                    <button type="submit" class="btn btn-primary mb-3">Read More</button>
+                  </form>
+                  </li>
+              </ul>
+
+            </div>
+          </div>
+        <% }) %>
+      </div>
+      <a href="/">Go back</a>
+    </div>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
   </body>
 </html>

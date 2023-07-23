@@ -1,9 +1,13 @@
 const axios = require("axios");
 const Stock = require("../models/stock");
 const convert = require("xml-js");
+const { json } = require("express");
+const { exec } = require("child_process");
+const fs = require('fs');
 require("dotenv").config();
 const API_KEY = process.env.API;
 const stockController = {
+  //fetch all the companies from the api based on the keyword typed
   async fetchStockList(req, res) {
     const stockName = req.query.name;
     try {
@@ -22,6 +26,7 @@ const stockController = {
       res.send("not found");
     }
   },
+  //get individual stock from the Database
   async displayStock(req, res) {
     const symbol = req.params.symbol;
     try {
@@ -30,12 +35,15 @@ const stockController = {
         res.status(404).send("Stock not found in database");
       } else {
         res.render("stock_result", { stock });
+        createJSONFile(stock)
+        //fires the python script
+        triggerPythonFunction();
       }
     } catch (error) {
       res.status(500).send("Error fetching stock details");
     }
   },
-
+//gets the stock detail from the API and saves into the database
   async saveStockDetails(req, res) {
     const symbol = req.params.symbol.split(" ").join(""); //remove any spaces
     try {
@@ -43,7 +51,7 @@ const stockController = {
         `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${API_KEY}`
       );
       const quoteData = quoteResponse.data;
-      console.log(quoteData)
+      console.log(quoteData);
       if (quoteData["Global Quote"]) {
         const quote = quoteData["Global Quote"];
         var stockDetails = {
@@ -75,4 +83,27 @@ const stockController = {
     }
   },
 };
+//download json as a file
+function createJSONFile(stock) {
+  const jsonString = JSON.stringify(stock, null, 2);
+  fs.writeFile("sample.json", jsonString, "utf8", (err) => {
+    if (err) {
+      console.error("Error writing JSON file:", err);
+      return;
+    }
+    console.log("JSON file saved");
+  });
+
+}
+// Function to trigger the Python script
+function triggerPythonFunction() {
+  exec("python ./converter.py", (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Error executing Python script: ${error.message}`);
+    } else {
+      console.log("Python script executed successfully");
+      console.log(stdout);
+    }
+  });
+}
 module.exports = stockController;

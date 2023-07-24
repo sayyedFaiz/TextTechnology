@@ -4,9 +4,9 @@
 
 ## Usage
 The webserver is build with javascript and node. As prerequisites you need to 
-1. install ![node](https://nodejs.org) as well as its package manager ![npm](https://nodejs.org/)
-2. install ![python3](https://www.python.org/)
-3. have a running ![MongoDB](https://www.mongodb.com/), either as a local server or by using an online cluster
+1. install [node](https://nodejs.org) as well as its package manager [npm](https://nodejs.org/)
+2. install [python3](https://www.python.org/)
+3. have a running [MongoDB](https://www.mongodb.com/), either as a local server or by using an online cluster
 
 If all prerequisites are satisfied, clone the repository and install all needed packages by running `npm install` in the main folder.
 

@@ -30,6 +30,8 @@ Now you should be able to start the server by the `node server` in the main fold
 ./Controllers/stockController.js | Contains the backend for the three pages of our webserver. Here the API requests as well as adding/updating entries in our database is done.
 ./.env | Contains two environment variables that must be set to start the webserver and connect to the MongoDB database.
 ./server.js | Entry script for the webserver. Start this file with node. Contains the code for assembling the webserver and defining the available pages.
-./converter.py | Contains the code for convertig json to xml. Will be called by the server script automatically.
+./converter.py | Contains the code for converting json to xml. Will be called by the server script automatically.
+
+## Code description
 
 ## Webpage description and example queries

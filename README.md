@@ -5,14 +5,14 @@ Therefor we build a web server that acts as in interface between the user and th
 While using our web server to query information from the API, the server stores all queried informations in a MongoDB and thereby builds our database.
 An overview of our project in shown in image TBD.
 
-The main page of our webserver is the index page (http://localhost:4200/), see TBD.
+The main page of our webserver is the index page (http://localhost/), see TBD.
 Here a user can insert any kind of query to find a company of them choice, eg. one can search of a ticker or a name.
-This query is forwarded to the AlphaVantage API and a list of possible matching results is displayed on the search result page page (http://localhost:4200/stock), see TBD.
-After selecting the company of choice, the webpage redirects you to the stock details (http://localhost:4200/:symbol:) page, where `:symbol:` is the ticker that identifies the requested company.
+This query is forwarded to the AlphaVantage API and a list of possible matching results is displayed on the search result page page (http://localhost/stock), see TBD.
+After selecting the company of choice, the webpage redirects you to the stock details (http://localhost/:symbol:) page, where `:symbol:` is the ticker that identifies the requested company.
 Here all relevant informations that were queried form the AlphaVantage API are displayed. 
 At the same time, the webserver will store the company information in our own database.
 For each company that a user can inspect, the server also offers to download the data in the XML format.
-We also provide a XML schema file (http://localhost:4200/schema.xsd) that can be used to validate all downloaded XML files.
+We also provide a XML schema file (http://localhost/schema.xsd) that can be used to validate all downloaded XML files.
 
 ## Usage
 The webserver is build with javascript and node. As prerequisites you need to 
@@ -52,13 +52,13 @@ Now you should be able to start the server by running the command `node server` 
 The `./Controllers/stockController.js` file contains the code that runs the queries to the AlphaVantage API and stores items in our database.
 This file defines an object called `stockController` which defines four methods.
 
-The search page (http://localhost:4200/) is connected to the `stockController.fetchStockList` method, which sends the user query to the API via a GET request.
-The API response with a list of potentially matching results, which are rendered via an embedded-javascript template on the search result page (http://localhost:4200/stock).
+The search page (http://localhost/) is connected to the `stockController.fetchStockList` method, which sends the user query to the API via a GET request.
+The API response with a list of potentially matching results, which are rendered via an embedded-javascript template on the search result page (http://localhost/stock).
 
-If a user clicks on a company of them choice, a link redirects to (http://localhost:4200/:symbol:/save).
+If a user clicks on a company of them choice, a link redirects to (http://localhost/:symbol:/save).
 The selected company is passed via the URL argument `:symbol:` to the `stockController.saveStockDetails` method.
 This method queries the relevant information about the selected company from the AlphaVantage API and stores them into our MongoDB.
-Afterwards the method redirects the users browser to the stock details page (http://localhost:4200/:symbol:).
+Afterwards the method redirects the users browser to the stock details page (http://localhost/:symbol:).
 
 Again the company of interest is passed as the URL argument `:symbol:` to the method behind, which is `stockController.displayStock`.
 This method queries the requested symbol from our MongoDB and displays the result via an embedded-javascript template.

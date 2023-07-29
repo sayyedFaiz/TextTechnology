@@ -18,13 +18,13 @@ app.get('/stock', StockController.fetchStockList);
 app.post('/stock_result/:symbol/save',StockController.saveStockDetails)
 app.get('/stock_result/:symbol', StockController.displayStock);
 app.get('/overview', OverviewController.displayDatabaseOverview);
-app.get('/schema', function(req, res){ 
+app.get('/schema', function(req, res){
   const file = `${__dirname}/output.xsd`;
-  res.download(file); 
+  res.download(file);
 });
-app.get('/download', function(req, res){ 
+app.get('/download', function(req, res){
   const file = `${__dirname}/output.xml`;
-  res.download(file); 
+  res.download(file);
 });
 
 //creates the mongoDB connection

@@ -1,8 +1,11 @@
 {
-  "_id": "64bcfecc23a8b4ea55a11700",
-  "symbol": "TATACONSUM.BSE",
-  "price": 852.4,
-  "dayHigh": 875.5,
-  "dayLow": 849.35,
+  "_id": "64c52faca12073dc0c994050",
+  "symbol": "SONY",
+  "price": 93.47,
+  "dayHigh": 94.174,
+  "dayLow": 93.4,
+  "sector": "MANUFACTURING",
+  "industry": "HOUSEHOLD AUDIO & VIDEO EQUIPMENT",
+  "description": "Sony Group Corporation designs, develops, produces and sells electronic equipment, instruments and devices for the consumer, professional and industrial markets worldwide. The company is headquartered in Tokyo, Japan.",
   "__v": 0
 }

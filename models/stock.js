@@ -7,6 +7,9 @@ const stockSchema = new mongoose.Schema({
   price: Number,
   dayHigh: Number,
   dayLow: Number,
+  sector: String,
+  industry: String,
+  description: String
 });
 
 const Stock = mongoose.model("Stock", stockSchema);

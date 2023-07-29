@@ -17,6 +17,9 @@
             <p><strong>Price:</strong> <%= stock.price %></p>
             <p><strong>Day High:</strong> <%= stock.dayHigh %></p>
             <p><strong>Day Low:</strong> <%= stock.dayLow %></p>
+            <p><strong>Sector:</strong> <%= stock.sector %></p>
+            <p><strong>Industry:</strong> <%= stock.industry %></p>
+            <p><strong>Description:</strong> <%= stock.description %></p>
           <% } else { %>
             <p>Stock details not found.</p>
           <% } %>
@@ -24,6 +27,8 @@
       </div>
     </div>
     <a href="/" class="btn btn-primary mt-5">Go back</a>
+    <a href="/download" class="btn btn-primary mt-5">Download as XML</a>
+    <a href="/schema" class="btn btn-primary mt-5">Download as Schema</a>
   </div>
   <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
 

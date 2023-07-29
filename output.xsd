@@ -2,7 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:element name="root">
         <xs:complexType>
-            <xs:sequence>
+            <xs:all>
                 <xs:element name="_id" type="xs:string" />
                 <xs:element name="symbol" type="xs:string" />
                 <xs:element name="price" type="xs:string" />
@@ -12,7 +12,7 @@
                 <xs:element name="industry" type="xs:string" />
                 <xs:element name="description" type="xs:string" />
                 <xs:element name="__v" type="xs:string" />
-            </xs:sequence>
+            </xs:all>
         </xs:complexType>
     </xs:element>
 </xs:schema>

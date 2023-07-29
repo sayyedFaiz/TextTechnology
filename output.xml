@@ -1,14 +1,12 @@
 <root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="output.xsd">
-    <_id>64c55f20f237ee52db0b9214</_id>
-    <symbol>SONY</symbol>
-    <price>93.47</price>
-    <dayHigh>94.174</dayHigh>
-    <dayLow>93.4</dayLow>
-    <sector>MANUFACTURING</sector>
-    <industry>HOUSEHOLD AUDIO &amp; VIDEO EQUIPMENT</industry>
-    <description>Sony Group Corporation designs, develops, produces and sells electronic equipment,
-        instruments and devices for the consumer, professional and industrial markets worldwide. The
-        company is headquartered in Tokyo, Japan.</description>
+    <_id>64bbb011a67bbfb895604bf6</_id>
+    <symbol>BMW.DEX</symbol>
+    <price>111.28</price>
+    <dayHigh>111.56</dayHigh>
+    <dayLow>108.62</dayLow>
     <__v>0</__v>
+    <description>--Unknown--</description>
+    <industry>--Unknown--</industry>
+    <sector>--Unknown--</sector>
 </root>

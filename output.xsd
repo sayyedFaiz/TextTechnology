@@ -8,6 +8,9 @@
                 <xs:element name="price" type="xs:string" />
                 <xs:element name="dayHigh" type="xs:string" />
                 <xs:element name="dayLow" type="xs:string" />
+                <xs:element name="sector" type="xs:string" />
+                <xs:element name="industry" type="xs:string" />
+                <xs:element name="description" type="xs:string" />
                 <xs:element name="__v" type="xs:string" />
             </xs:sequence>
         </xs:complexType>

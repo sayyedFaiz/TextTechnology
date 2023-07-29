@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Overview of Database</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1>Overview of database</h1>
+        <table class="table table-striped">
+          <tr>
+            <th>Attributes</th>
+            <th>value</th>
+          </tr>
+          <tr>
+            <td>Total number of Stocks</td>
+            <td><%=aggregation.numItems%></td>
+          </tr>
+          <tr>
+            <td>Total number of Sectors</td>
+            <td><%=aggregation.numSectors%></td>
+          </tr>
+          <tr>
+            <td>Total number of Industries</td>
+            <td><%=aggregation.numIndustries%></td>
+          </tr>
+          <tr>
+            <td>Stocks per Sector</td>
+            <td><%=aggregation.avgPerSector%></td>
+          </tr>
+          <tr>
+            <td>Stocks per Industry</td>
+            <td><%=aggregation.avgPerIndustrie%></td>
+          </tr>
+        </table>
+      </div>
+      <div class="row">
+        <div class="col-md"><canvas id="sectorChart"></canvas></div>
+        <div class="col-md"><canvas id="industryChart"></canvas></div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+      function makeChart(name, data) {
+        const ctx = document.getElementById(name);
+        new Chart(ctx, {
+          type: 'bar',
+          data: data,
+          options: {
+            indexAxis: 'y',
+          }
+        });
+      }
+    </script>
+    <script>
+      data = <%-aggregation.distSector%>;
+      makeChart("sectorChart", data);
+      data = <%-aggregation.distIndustry%>;
+      makeChart("industryChart", data);
+    </script>
+
+  </body>
+</html>
